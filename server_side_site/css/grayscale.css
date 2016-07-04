@@ -32,7 +32,7 @@ h6 {
 
 h3{
     text-align: center;
-
+    padding-top: 100px
 }
 
 p {
@@ -60,6 +60,13 @@ a:hover,
 a:focus {
     text-decoration: none;
     color: #1d9b6c;
+}
+
+
+.table{
+    width:60%;
+    margin:50px auto 30px auto ;
+
 }
 
 .light {
@@ -152,7 +159,6 @@ a:focus {
 }
 
 
-
 .intro {
     display: table;
     width: 100%;
@@ -211,6 +217,9 @@ a:focus {
     transition: background .3s ease-in-out;
 }
 
+.member-btn{
+    margin-left: 145px;
+}
 .btn-circle:hover,
 .btn-circle:focus {
     outline: 0;
