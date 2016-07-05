@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c2ebdbe-48ba-4d35-b83a-2699cbec2533" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server_side_site/includes/images.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server_side_site/add_image.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server_side_site/edit_user.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server_side_site/log_in.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server_side_site/main.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server_side_site/sign_up.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server_side_site/includes/footer.php" afterPath="$PROJECT_DIR$/server_side_site/includes/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server_side_site/includes/header.php" afterPath="$PROJECT_DIR$/server_side_site/includes/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server_side_site/add_image.php" afterPath="$PROJECT_DIR$/server_side_site/add_image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server_side_site/includes/images.php" afterPath="$PROJECT_DIR$/server_side_site/includes/images.php" />
     </list>
     <ignored path="server-side-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,18 +38,8 @@
       <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server_side_site/includes/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server_side_site/includes/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -64,8 +48,8 @@
       <file leaf-file-name="add_image.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server_side_site/add_image.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="50" selection-end-column="2" />
+            <state relative-caret-position="645">
+              <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -74,8 +58,8 @@
       <file leaf-file-name="edit_user.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server_side_site/edit_user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="255">
+              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -84,10 +68,12 @@
       <file leaf-file-name="images.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server_side_site/includes/images.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+            <state relative-caret-position="660">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="e#6#94#0#PHP" expanded="true" />
+                <marker date="1467756760000" expanded="true" signature="485:551" ph="SELECT id,fi... images" />
+                <marker date="1467756760000" expanded="true" signature="485:552" ph="SELECT id,fi... images" />
               </folding>
             </state>
           </provider>
@@ -96,8 +82,8 @@
       <file leaf-file-name="connection.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server_side_site/includes/connection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+            <state relative-caret-position="135">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -136,11 +122,11 @@
         <option value="$PROJECT_DIR$/server_side_site/includes/header.php" />
         <option value="$PROJECT_DIR$/server_side_site/includes/footer.php" />
         <option value="$PROJECT_DIR$/server_side_site/main.php" />
-        <option value="$PROJECT_DIR$/server_side_site/add_image.php" />
         <option value="$PROJECT_DIR$/server_side_site/sign_up.php" />
         <option value="$PROJECT_DIR$/server_side_site/log_in.php" />
         <option value="$PROJECT_DIR$/server_side_site/edit_user.php" />
         <option value="$PROJECT_DIR$/server_side_site/images.php" />
+        <option value="$PROJECT_DIR$/server_side_site/add_image.php" />
         <option value="$PROJECT_DIR$/server_side_site/includes/images.php" />
       </list>
     </option>
@@ -153,10 +139,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1917" />
+    <option name="x" value="-1920" />
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="width" value="1680" />
+    <option name="height" value="973" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -292,18 +278,18 @@
       <option name="presentableId" value="Default" />
       <updated>1467680311084</updated>
       <workItem from="1467680312825" duration="4232000" />
-      <workItem from="1467692896295" duration="907000" />
+      <workItem from="1467692896295" duration="2568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5139000" />
+    <option name="totallyTimeSpent" value="6800000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1917" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="-1920" y="23" width="1680" height="973" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2857143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -390,22 +376,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server_side_site/main.html" />
     <entry file="file://$PROJECT_DIR$/server_side_site/add_image.html" />
-    <entry file="file://$PROJECT_DIR$/server_side_site/includes/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server_side_site/includes/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server_side_site/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1875">
@@ -432,34 +402,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server_side_site/add_image.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="50" selection-end-column="2" />
+        <state relative-caret-position="645">
+          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server_side_site/edit_user.php">
+    <entry file="file://$PROJECT_DIR$/server_side_site/includes/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        <state relative-caret-position="846">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server_side_site/includes/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server_side_site/includes/connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+        <state relative-caret-position="135">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server_side_site/edit_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server_side_site/includes/images.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+        <state relative-caret-position="660">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="e#6#94#0#PHP" expanded="true" />
+            <marker date="1467756760000" expanded="true" signature="485:551" ph="SELECT id,fi... images" />
+            <marker date="1467756760000" expanded="true" signature="485:552" ph="SELECT id,fi... images" />
           </folding>
         </state>
       </provider>

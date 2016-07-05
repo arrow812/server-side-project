@@ -28,6 +28,7 @@ require_once('includes/header.php');
     <label for="exampleTextarea">Example textarea</label>
     <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
   </fieldset> -->
+      
   <fieldset class="form-group">
     <label for="exampleInputFile">Image input</label>
     <input type="file" class="form-control-file" id="exampleInputFile">
@@ -48,4 +49,3 @@ require_once('includes/header.php');
 
 <?php
 require_once('includes/footer.php');
-?>
