@@ -22,6 +22,8 @@ class Connection {
     //execute the passed in query and return result
     public function query($sql) {
 
+
+        //echo $sql;
         //execute query
         $result = $this->mysqli->query($sql);
         return $result;

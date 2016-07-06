@@ -22,32 +22,62 @@ require_once('connection.php');
         $this->iUserId=0;
     }
 
-        public function load($iId){
-            $oConnection = new Connection();
+    public function load($iId){
+        $oConnection = new Connection();
 
-            $sSQL ="SELECT id,file,type_id,user_id 
-				  FROM images
-				  WHERE id = ".$oConnection->($iId);
+        $sSQL ="SELECT id,file,type_id,user_id 
+		  FROM images
+		  WHERE id = ".($iId);
 
-            $oResultSet = $oConnection->query($sSQL);
+        $oResultSet = $oConnection->query($sSQL);
 
-            $aRow = $oConnection->fetch($oResultSet);
+        $aRow = $oConnection->fetch($oResultSet);
 
-            $this->iId=$aRow['id'];
-            $this->sFile=$aRow['file'];
-            $this->iTypeId=$aRow['type_id'];
-            $this->iUserId=$aRow['user_id'];
+        $this->iId=$aRow['id'];
+        $this->sFile=$aRow['file'];
+        $this->iTypeId=$aRow['type_id'];
+        $this->iUserId=$aRow['user_id'];
+    }
 
+    public function save(){
+        $oConnection = new Connection();
 
+        if($this->iId == 0){
+            //insert
+            $sSQL = "INSERT INTO images ( file, type_id, user_id) 
+                    VALUES ( '".$this->sFile."', '".$this->iTypeId."', '".$this->iUserId."');";
+
+            $bSuccess =  $oConnection->query($sSQL);
+
+            if($bSuccess== true){
+                $this->iId = $oConnection->getInsertId();
+
+            }else{
+                //update
+                $sSQL = "UPDATE 
+                        SET file = '".$this->sFile."', type_id = '".$this->iTypeId."', user_id = '".$this->iUserId."' 
+                        WHERE images = ".$this->iId;
+
+            }
+            
         }
+
+    }
 
 }
 
-$oImage = new Image;
 
-$oImage->load(5);
+//testing
 
-echo '<pre>';
-print_r($oImage);
-echo '</pre>';
+// $oImage = new Image;
+
+// $oImage->sFile='this_is_a_new.jpg';
+// $oImage->iTypeId= 5;
+// $oImage->iUserId= 1;
+
+// $oImage->save();
+
+// echo '<pre>';
+// print_r($oImage);
+// echo '</pre>';
 
