@@ -49,12 +49,12 @@ class Type{
 
 //testing
 
-$oType = new Type();
-$oType->load(3);
-
-echo '<pre>';
-print_r($oType);
-echo '</pre>';
+//$oType = new Type();
+//$oType->load(3);
+//
+//echo '<pre>';
+//print_r($oType);
+//echo '</pre>';
 
 
 

@@ -32,6 +32,13 @@ session_start();
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9] -->
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -54,21 +61,27 @@ session_start();
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+
+<!--                <ul class="nav navbar-nav">-->
+<!--                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+<!--                    <li class="hidden">-->
+<!--                        <a href="#page-top"></a>-->
+<!--                    </li>-->
+<!---->
+<!--                    <li>-->
+<!--                        <select class="page-scroll" name="imagelist" form="imageform">-->
+<!--                            <option value="landscape">Landscape</option>-->
+<!--                            <option value="moody">Moody</option>-->
+<!--                            <option value="escape">Escape</option>-->
+<!--                            <option value="architecture">Architecture</option>-->
+<!--                        </select>-->
+<!--                    </li>-->
+<!---->
+<!--                </ul>-->
+
+
+
                 <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-
-                    <li>
-                        <select class="page-scroll" name="imagelist" form="imageform">
-                            <option value="landscape">Landscape</option>
-                            <option value="moody">Moody</option>
-                            <option value="escape">Escape</option>
-                            <option value="architecture">Architecture</option>
-                        </select>
-                    </li>
-
 <!--                    <li>-->
 <!--                        <a class="page-scroll" href="#abfffout"></a>-->
 <!--                    </li>-->
@@ -80,7 +93,6 @@ session_start();
                         <a class="page-scroll" href="add_image.php">Add Image</a>
                     </li>
 
-
                     <li>
                         <a class="page-scroll" href="log_in.php">Members/Login</a>
                     </li>
@@ -88,7 +100,6 @@ session_start();
                     <li>
                         <a class="page-scroll" href="edit_user.php">edit_user</a>
                     </li>
-
 
                 </ul>
             </div>

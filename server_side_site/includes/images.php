@@ -70,13 +70,13 @@ require_once('connection.php');
 //testing
 
 // $oImage = new Image;
-
-// $oImage->sFile='this_is_a_new.jpg';
-// $oImage->iTypeId= 5;
+//
+// $oImage->sFile='this.jpg';
+// $oImage->iTypeId= 3;
 // $oImage->iUserId= 1;
-
+//
 // $oImage->save();
-
+//
 // echo '<pre>';
 // print_r($oImage);
 // echo '</pre>';
