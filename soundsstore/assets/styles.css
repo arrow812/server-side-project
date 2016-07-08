@@ -1,0 +1,63 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+
+*{
+	padding:0;
+	margin:0;
+	border:none;
+	list-style-type: none;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	background-color: red;
+}
+
+.clearfix:after{
+	content:'';
+	display: block;
+	clear:both;
+}
+
+
+/*.navbar-inverse {
+    background-color: red!important;
+    border-color: #080808;
+}*/
+
+#navcolor{
+	background-color: red;
+}
+
+
+
+
+/* ================================= 
+ 	Nav
+==================================== */
+
+.nav-title{
+	font-family: 'Helvetica Neue';
+	font-weight: 100;
+}
+
+
+
+/* ================================= 
+	Flexbox
+==================================== */
+
+
+
+/* ================================= 
+	Media Queries
+==================================== */
+
+@media (min-width: 769px) { 
+}
+
+@media (min-width: 1025px) { 
+}
+
+@media (min-width: 700px) and (orientation: landscape) { 
+}

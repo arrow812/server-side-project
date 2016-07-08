@@ -1,33 +1,27 @@
 <?php
-
+require_once('includes/connection.php');
 require_once('includes/header.php');
+require_once('includes/types.php');
+
+
+ $iCurrentTypeId = 2;
+// //check see if we have typeId in query string
+if(isset($_GET['typeid'])==true){
+    $iCurrentTypeId = $_GET['typeid'];
+}
+
+$oType = new Type();
+$oType->load($iCurrentTypeId);
+
+echo View::renderType($oType)
 
 ?>
-
-
-    <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-            <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
-        </ul>
-    </div>
-
-
-
-
-
-
-
-
 
 
 
 
     <!-- Intro Header -->
-    <header class="intro" style="background-image:url(image/a.jpg)">
+<!--     <header class="intro" style="background-image:url(image/a.jpg)">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
@@ -101,7 +95,7 @@ require_once('includes/header.php');
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
 
    
 

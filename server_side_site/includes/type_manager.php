@@ -5,9 +5,12 @@ require_once('types.php');
 
 class TypeManager{
 
+    // public $aTypes =[];
+
     static public function getTypes(){
 
         $aTypes =[];
+
         $oConnection = new Connection();
 
         $sSQL = 'SELECT id FROM types';
@@ -19,7 +22,7 @@ class TypeManager{
             $oType = new Type();
 
             $oType->load($iTypeId);
-            $aTypes = $oType;
+            $aTypes[] = $oType;
         }
         return $aTypes;
     }
@@ -27,7 +30,7 @@ class TypeManager{
 
     static public function listTypes(){
 
-        $aTypes=[];
+        
         $oConnection = new Connection;
 
         $sSQL = 'SELECT id,type_name FROM types';
@@ -48,6 +51,6 @@ class TypeManager{
 // print_r(TypeManager::listTypes());
 // echo '</pre>';
 //
-//echo '<pre>';
-//print_r(TypeManager::getTypes());
-//echo '</pre>';
+// echo '<pre>';
+// print_r(TypeManager::getTypes());
+// echo '</pre>';

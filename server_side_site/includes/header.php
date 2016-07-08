@@ -1,6 +1,9 @@
 <?php
 
-session_start();
+// session_start();
+require_once('includes/type_manager.php');
+require_once('includes/view.php');
+require_once('includes/connection.php');
 
 ?>
 
@@ -35,8 +38,14 @@ session_start();
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
 
 
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -62,23 +71,24 @@ session_start();
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 
-<!--                <ul class="nav navbar-nav">-->
-<!--                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-<!--                    <li class="hidden">-->
-<!--                        <a href="#page-top"></a>-->
-<!--                    </li>-->
-<!---->
-<!--                    <li>-->
-<!--                        <select class="page-scroll" name="imagelist" form="imageform">-->
-<!--                            <option value="landscape">Landscape</option>-->
-<!--                            <option value="moody">Moody</option>-->
-<!--                            <option value="escape">Escape</option>-->
-<!--                            <option value="architecture">Architecture</option>-->
-<!--                        </select>-->
-<!--                    </li>-->
-<!---->
-<!--                </ul>-->
+                <?php 
+                $aTypes = TypeManager::getTypes();
 
+                 echo View::renderNav($aTypes);
+
+                ?>
+
+                <!-- <div class="dropdown nav navbar-nav">
+                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">View by Type
+                          <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                      <li class="hidden"><a href="#page-top"></a></li> -->
+                          <!-- <li><a href="#">Moody</a></li>
+                          <li><a href="#">Landscape</a></li>
+                          <li><a href="#">Escape</a></li>
+                          <li><a href="#">Architecture</a></li> -->
+                      <!-- </ul>
+                </div> -->
 
 
                 <ul class="nav navbar-nav">

@@ -8,11 +8,13 @@ require_once('includes/header.php');
 
     <form class="form">
     <h3>SIGN UP</h3>
-  <fieldset class="form-group">
+<!--   <fieldset class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
     <small class="text-muted">We'll never share your email with anyone else.</small>
-  </fieldset>
+  </fieldset> -->
+
+
 
   <fieldset class="form-group">
     <label for="firstname">First Name</label>

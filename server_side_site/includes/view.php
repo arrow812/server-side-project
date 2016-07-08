@@ -1,39 +1,66 @@
 <?php
 
 class View{
+
     static public function renderNav($aTypes){
 
-        $sHTML = '<ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-
-                    <li>'
+        $sHTML = '<div class="dropdown nav navbar-nav">
+                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">View by Type
+                          <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                 <li class="hidden"><a href="#page-top"></a></li>';
 
             //make types
 
             for($i=0; $i<count($aTypes); $i++){
                 $oType = $aTypes[$i];
+                $sHTML.='<li><a href="main.php?typeid='.$oType->iId.'">'.$oType->sTypeName.'
+                </a></li>';
             }
 
-        $sHTML.=''
+            $sHTML.='</ul>
+                    </div>';
+
+            return $sHTML;
+    }
 
 
+    static public function renderType($oType){
 
+        $sHTML = '';
 
+        $aImages = $oType->aImages;
 
+        for($i=0; $i<count($aImages); $i++){
 
+            $oImage = $aImages[$i];
 
+            $sHTML .= '<header class="intro" style="background-image:url(image/'.$oImage->sFile.')">
+                    <div class="intro-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <h1 class="brand-heading"></h1>
+                                    <p class="intro-text">image</p>
+                                    <a href="#about" class="btn btn-circle page-scroll">
+                                        <i class="fa fa-angle-double-down animated"></i>
+                                    </a>
+                                    <a href="#about" class="btn btn-circle page-scroll">
+                                        <i class="fa fa-angle-double-up animated"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>';
 
-                        <select class="page-scroll" name="imagelist" form="imageform">
-                            <option value="landscape">Landscape</option>
-                            <option value="moody">Moody</option>
-                            <option value="escape">Escape</option>
-                            <option value="architecture">Architecture</option>
-                        </select>
-                    </li>
-                </ul>
-
+        }
+        return $sHTML;
     }
 }
+
+                        
+
+
+
+
