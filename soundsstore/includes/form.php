@@ -66,6 +66,7 @@ class Form{
 		$this->sHTML .= '<p>'.$sError.'<p>';
 	}
 
+	
 
 	public function makeSelectInput($sLabel,$sInputName,$aOptions){
 		$sData = '';
@@ -98,6 +99,7 @@ class Form{
 
 		$this->sHTML .='<p>'.$sError.'<p>';
 	}
+
 
 
 	// public function makeNumber($sLabel,$sInputName){

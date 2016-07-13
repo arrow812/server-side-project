@@ -43,6 +43,7 @@ class User{
 		}
 	}
 
+
 	public function load($iId){
 		$oConnection = new Connection;
 

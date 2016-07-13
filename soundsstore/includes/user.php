@@ -37,9 +37,7 @@ class User{
 
 			if($bSuccess == true){
 				$this->iId = $oConnection->getInsertId();
-
 			}
-
 		}else{
 
 			$sSQL= "UPDATE users
@@ -47,7 +45,6 @@ class User{
 					 WHERE id = ".$oConnection->escape($this->iId);
 
 			$oConnection->query($sSQL);
-
 		}
 	
 	}
@@ -73,6 +70,7 @@ class User{
 		$this->sTelephone = $aRow['telephone'];
 		$this->sEmail = $aRow['email'];
 	}
+
 
 	public function loadByUserName($sUserName){
 		$oConnection = new Connection;
@@ -105,14 +103,15 @@ class User{
 	}
 }
 
-// $oUser = new User();
+
+ $oUser = new User();
 // // $oUser->loadByUserName('steph.pan');
-//  $oUser->load(3);
+  $oUser->load(1);
 // $oUser->sFirstName = 'Aramis';
 // $oUser->save();
 
-// echo '<pre>';
-// print_r($oUser);
-// echo '</pre>'
+ echo '<pre>';
+ print_r($oUser);
+ echo '</pre>';
 
  ?>
