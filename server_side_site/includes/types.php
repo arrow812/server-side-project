@@ -18,6 +18,8 @@ class Type{
 	public function load($iId){
 		$oConnection = new Connection();
 
+		
+
 		$sSQL = 'SELECT id, type_name FROM types WHERE id = '.$iId;
 
 		$oResultSet= $oConnection->query($sSQL);
@@ -29,7 +31,8 @@ class Type{
 
 		//query all type IDs of the image
 		$sSQL = 'SELECT id FROM images WHERE type_id = '.$iId;
-
+		
+		
 		// echo($sSQL);
 
 		$oResultSet = $oConnection->query($sSQL);
@@ -42,9 +45,7 @@ class Type{
 			$this->aImages[] = $oImage; // add more at the end of array
 
 		}
-
 	}
-
 }
 
 //testing

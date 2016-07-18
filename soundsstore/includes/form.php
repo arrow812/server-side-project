@@ -59,7 +59,8 @@ class Form{
 		$this->sHTML.='<div class="form-group">
 		    <label for="'.$sInputName.'" class="col-sm-4 control-label">'.$sLabel.'</label>
 		    <div class="col-sm-8">
-		      <input type="text" class="form-control" id="'.$sInputName.'" name="'.$sInputName.'" placeholder="'.$sLabel.'" value="'.$sData.'">
+		      <input type="text" class="form-control" id="'.$sInputName.'" name="'.$sInputName.'" 
+		      		  placeholder="'.$sLabel.'" value="'.$sData.'">
 		    	</div>
 		  	</div>';
 
@@ -76,7 +77,6 @@ class Form{
 			$sData = $this->aData[$sInputName];
 		}
 
-
 		$sError = ''; //looking for error input
 		if(isset($this->aErrors[$sInputName])==true){
 			$sError = $this->aErrors[$sInputName];
@@ -92,14 +92,13 @@ class Form{
 		foreach($aOptions as $sValue=>$sText){
 			$this->sHTML .='<option value="'.$sValue.'">'.$sText.'</option>';
 		}
-
-
+		
 
 		$this->sHTML .='</select></div></div>';
 
 		$this->sHTML .='<p>'.$sError.'<p>';
 	}
-
+	
 
 
 	// public function makeNumber($sLabel,$sInputName){

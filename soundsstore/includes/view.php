@@ -14,7 +14,7 @@ class View{
 
 		 		$sHTML.='<li><a href="main.php?genreid='.$oGenre->iId.'">'.$oGenre->sGenreName.'</li>';
 
-		 }
+		 
 
 		 $sHTML.= '</ul>';
 

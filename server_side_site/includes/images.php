@@ -7,6 +7,8 @@
  */
 
 require_once('connection.php');
+require_once('types.php');
+
 
 
     class Image{
@@ -23,28 +25,51 @@ require_once('connection.php');
     }
 
     public function load($iId){
+
+        //$typeId = '';
+
+//    if(isset($_GET['typeid'])) {
+//        $typeid = $_GET['typeid'];
+//      echo('Type ID:'.$typeId);
+//    }
+
+
         $oConnection = new Connection();
 
-        $sSQL ="SELECT id,file,type_id,user_id 
-		  FROM images
-		  WHERE id = ".($iId);
+//        if($iTypeId == 2){
+//
+//            $sSQL = "SELECT id,file,type_id,user_id
+//	        FROM images";
+//
+//
+//        } else {
+            $sSQL = "SELECT id,file,type_id,user_id 
+	        FROM images
+	        WHERE id =".($iId);
+            //die ($sSQL);
+       // }
+
 
         $oResultSet = $oConnection->query($sSQL);
 
         $aRow = $oConnection->fetch($oResultSet);
 
-        $this->iId=$aRow['id'];
-        $this->sFile=$aRow['file'];
-        $this->iTypeId=$aRow['type_id'];
-        $this->iUserId=$aRow['user_id'];
+        $this->iId = $aRow['id'];
+        $this->sFile = $aRow['file'];
+        $this->iTypeId = $aRow['type_id'];
+        $this->iUserId = $aRow['user_id'];
+
+               //die ($iTypeId);
     }
 
+
+        
     public function save(){
         $oConnection = new Connection();
 
         if($this->iId == 0){
-            //insert
-            $sSQL = "INSERT INTO images ( file, type_id, user_id) 
+
+            $sSQL = "INSERT INTO images (file, type_id, user_id) 
                     VALUES ( '".$this->sFile."', '".$this->iTypeId."', '".$this->iUserId."');";
 
             $bSuccess =  $oConnection->query($sSQL);
@@ -59,23 +84,21 @@ require_once('connection.php');
                         WHERE images = ".$this->iId;
 
             }
-            
         }
-
     }
-
 }
+
 
 
 //testing
 
 // $oImage = new Image;
+
+// $oImage->sFile='testing.jpg';
+// $oImage->load(2);
+//// $oImage->iUserId= 17;
 //
-// $oImage->sFile='this.jpg';
-// $oImage->iTypeId= 3;
-// $oImage->iUserId= 1;
-//
-// $oImage->save();
+//// $oImage->save();
 //
 // echo '<pre>';
 // print_r($oImage);

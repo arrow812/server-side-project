@@ -3,9 +3,13 @@ require_once('includes/connection.php');
 require_once('includes/header.php');
 require_once('includes/types.php');
 
+//'<pre>';
+//echo print_r($_SESSION['user_id']);
+//'<pre>';
+
 
  $iCurrentTypeId = 2;
-// //check see if we have typeId in query string
+//check see if we have typeId in query string
 if(isset($_GET['typeid'])==true){
     $iCurrentTypeId = $_GET['typeid'];
 }
@@ -16,9 +20,6 @@ $oType->load($iCurrentTypeId);
 echo View::renderType($oType)
 
 ?>
-
-
-
 
     <!-- Intro Header -->
 <!--     <header class="intro" style="background-image:url(image/a.jpg)">

@@ -11,7 +11,6 @@ require_once('includes/form.php');
 
 $oForm = new Form();
 
-
 // echo'<pre>';
 
 // echo print_r($sNewName);
@@ -22,16 +21,13 @@ $oForm = new Form();
 	if(isset($_POST['submit'])==true){
 
 
-		//move the file to the permanant location
+		//move the file to the permanent location
 
 		$aFileDetails = $_FILES['photo'];
 		$sNewName = time().$aFileDetails['name'];
 		$to = dirname(".").'/assets/images/album_covers/'.$sNewName;
 
 		move_uploaded_file($aFileDetails['tmp_name'],$to);
-
-
-
 
 		$oForm->aData = $_POST;
 	
@@ -53,9 +49,10 @@ $oForm = new Form();
 	}
 
 	if(count($oForm->aErrors) == 0){
-		$oProduct = new Product();
-		$oProduct->iId=$_POST['id'];
 
+		$oProduct = new Product();
+
+		$oProduct->iId=$_POST['id'];
 		$oProduct->sAlbumName = $_POST['album_name'];
 		$oProduct->sDescription = $_POST['description'];
 		$oProduct->iPrice = $_POST['price'];
@@ -63,9 +60,9 @@ $oForm = new Form();
 		$oProduct->iGenreId = $_POST['genre_id'];
 		$oProduct->iYear = $_POST['year'];
 		$oProduct->sArtistName = $_POST['artist_name'];
-
-
+		
 		$oProduct->save();
+		
 //redirect browser to the new page
 		header('Location:main.php?genreid='.$oProduct->iGenreId);
 

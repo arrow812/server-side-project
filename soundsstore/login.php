@@ -16,7 +16,6 @@ $oForm->close();
 
 
 
-
 if(isset($_POST['submit'])==true){
 
 	$oUser= new User();
@@ -38,9 +37,6 @@ if(isset($_POST['submit'])==true){
 			// $oCart->add(3);
 
 			$_SESSION['cart'] = $oCart;
-
-
-
 
 
 			header('Location: userdetails.php');

@@ -104,14 +104,14 @@ class User{
 }
 
 
- $oUser = new User();
+// $oUser = new User();
 // // $oUser->loadByUserName('steph.pan');
-  $oUser->load(1);
+ // $oUser->load(1);
 // $oUser->sFirstName = 'Aramis';
 // $oUser->save();
 
- echo '<pre>';
- print_r($oUser);
- echo '</pre>';
+// echo '<pre>';
+// print_r($oUser);
+// echo '</pre>';
 
  ?>

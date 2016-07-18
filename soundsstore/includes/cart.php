@@ -26,8 +26,7 @@ class Cart{
 	public function remove($iProductId){
 		//decrease qty by 1
 		$this->aContents[$iProductId]--;
-	
-
+		
 
 		//if qty becomes 0 remove product from list
 		if($this->aContents[$iProductId]<=0){
@@ -36,6 +35,7 @@ class Cart{
 	}
 
 }
+
 
 //testing
 
@@ -46,13 +46,9 @@ class Cart{
 // $oCart->add(6);
 
 
-
-
-
 // foreach($oCart->aContents as $iProductId=>$iQuantity){
 // 	echo 'Product'.$iProductId.'x'.$iQuantity.'<br>';
 // }
-
 
 
 // echo '<pre>';

@@ -1,9 +1,9 @@
 <?php
 
-// session_start();
-require_once('includes/type_manager.php');
-require_once('includes/view.php');
-require_once('includes/connection.php');
+session_start();
+require_once('type_manager.php');
+require_once('view.php');
+require_once('connection.php');
 
 ?>
 
@@ -36,17 +36,13 @@ require_once('includes/connection.php');
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9] -->
 
-
-
-
+    
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-
-
-
+    
 
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -71,49 +67,63 @@ require_once('includes/connection.php');
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 
-                <?php 
+
+
+
+                <?php
                 $aTypes = TypeManager::getTypes();
 
                  echo View::renderNav($aTypes);
 
-                ?>
-
-                <!-- <div class="dropdown nav navbar-nav">
-                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">View by Type
-                          <span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                      <li class="hidden"><a href="#page-top"></a></li> -->
-                          <!-- <li><a href="#">Moody</a></li>
-                          <li><a href="#">Landscape</a></li>
-                          <li><a href="#">Escape</a></li>
-                          <li><a href="#">Architecture</a></li> -->
-                      <!-- </ul>
-                </div> -->
 
 
-                <ul class="nav navbar-nav">
-<!--                    <li>-->
-<!--                        <a class="page-scroll" href="#abfffout"></a>-->
-<!--                    </li>-->
-                    <li>
-                        <a class="page-scroll" href="sign_up.php">Sign Up</a>
-                    </li>
+//                <!-- <div class="dropdown nav navbar-nav">
+//                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">View by Type
+//                          <span class="caret"></span></button>
+//                      <ul class="dropdown-menu">
+//                      <li class="hidden"><a href="#page-top"></a></li> -->
+//                          <!-- <li><a href="#">Moody</a></li>
+//                          <li><a href="#">Landscape</a></li>
+//                          <li><a href="#">Escape</a></li>
+//                          <li><a href="#">Architecture</a></li> -->
+//                      <!-- </ul>
+//                </div> -->
 
-                    <li>
-                        <a class="page-scroll" href="add_image.php">Add Image</a>
-                    </li>
+$sHTML='<ul class="nav navbar-nav ">';
 
-                    <li>
-                        <a class="page-scroll" href="log_in.php">Members/Login</a>
-                    </li>
+                    if(isset($_SESSION['user_id'])){
 
-                    <li>
-                        <a class="page-scroll" href="edit_user.php">edit_user</a>
-                    </li>
+                        $sHTML.= ' <li>
+                                   <a class="page-scroll" href="add_image.php">Add Image</a>
+                               </li>
+                              
+                               <li>
+                                   <a class="page-scroll" href="edit_user.php">edit_user</a>
+                               </li>
+                
+                               <li>
+                                 <a class="page-scroll" href="log_out.php">log out</a>
+                               </li>';
+                    }
 
-                </ul>
+
+                  if(!isset($_SESSION['user_id'])){
+
+                      $sHTML.= '<li>
+                             <a class="page-scroll" href="log_in.php">Login</a>
+                         </li>
+                         
+                         <li>
+                             <a class="page-scroll" href="sign_up.php">Sign Up</a>
+                         </li>';
+                  }
+
+$sHTML.= '</ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
-    </nav>
+    </nav>';
+
+ echo $sHTML;
+

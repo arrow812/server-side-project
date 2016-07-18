@@ -91,12 +91,12 @@ class User{
     }
 }
 
-$oUser = new User();
-
-$oUser->load(2);
+//$oUser = new User();
+////
+//$oUser->load(2);
 //$oUser->loadByEmail('qwerty@qaz.com');
-
-
+//
+//
 // echo '<pre>';
 // print_r($oUser);
 // echo '</pre>';
