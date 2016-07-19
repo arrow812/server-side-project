@@ -16,9 +16,8 @@ class Type{
 	}
 
 	public function load($iId){
-		$oConnection = new Connection();
 
-		
+		$oConnection = new Connection();
 
 		$sSQL = 'SELECT id, type_name FROM types WHERE id = '.$iId;
 

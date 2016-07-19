@@ -11,11 +11,12 @@ require_once('types.php');
 
 
 
-    class Image{
-        public $iId;
-        public $sFile;
-        public $iTypeId;
-        public $iUserId;
+class Image{
+    public $iId;
+    public $sFile;
+    public $iTypeId;
+    public $iUserId;
+
 
     public function __construct(){
         $this->iId=0;
@@ -24,32 +25,15 @@ require_once('types.php');
         $this->iUserId=0;
     }
 
+
     public function load($iId){
-
-        //$typeId = '';
-
-//    if(isset($_GET['typeid'])) {
-//        $typeid = $_GET['typeid'];
-//      echo('Type ID:'.$typeId);
-//    }
-
 
         $oConnection = new Connection();
 
-//        if($iTypeId == 2){
-//
-//            $sSQL = "SELECT id,file,type_id,user_id
-//	        FROM images";
-//
-//
-//        } else {
             $sSQL = "SELECT id,file,type_id,user_id 
 	        FROM images
 	        WHERE id =".($iId);
-            //die ($sSQL);
-       // }
-
-
+       
         $oResultSet = $oConnection->query($sSQL);
 
         $aRow = $oConnection->fetch($oResultSet);
@@ -58,10 +42,7 @@ require_once('types.php');
         $this->sFile = $aRow['file'];
         $this->iTypeId = $aRow['type_id'];
         $this->iUserId = $aRow['user_id'];
-
-               //die ($iTypeId);
     }
-
 
         
     public function save(){
@@ -87,7 +68,6 @@ require_once('types.php');
         }
     }
 }
-
 
 
 //testing

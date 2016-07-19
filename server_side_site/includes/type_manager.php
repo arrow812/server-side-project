@@ -28,6 +28,27 @@ class TypeManager{
     }
 
 
+    static public function listImages(){
+
+        $aImages = [];
+
+        $oConnection = new Connection;
+
+        $sSQL = 'SELECT * FROM images';
+
+        $oResultSet = $oConnection->query($sSQL);
+
+        while($aRow=$oConnection->fetch($oResultSet)){
+            $iImageId = $aRow['id'];
+            $oImage = new Image();
+
+            $oImage->load($iImageId);
+            $aImages[] = $oImage;
+        }
+        return $aImages;
+    }
+
+
     static public function listTypes(){
 
         
@@ -48,7 +69,7 @@ class TypeManager{
 
 // test...
 // echo '<pre>';
-// print_r(TypeManager::listTypes());
+// print_r(TypeManager::listImages());
 // echo '</pre>';
 //
 // echo '<pre>';

@@ -37,14 +37,23 @@ class Form{
 			$sData = $this->aData[$sInputName];
         }
 
-//		echo(print_r($sData));
+
+        $sError = ''; //looking for error input
+        if(isset($this->aErrors[$sInputName])==true){
+            $sError = $this->aErrors[$sInputName];
+        }
+
 
 		$this->sHTML .='<fieldset class="form-group" >
     	                <label for="'.$sInputName.'">'.$sLabel.'</label>
     	                <input type="text" class="form-control" id="'.$sInputName.'" name="'.$sInputName.'" 
     	                        placeholder="'.$sPlaceholder.'" value="'.$sData.'">
-    	                <small class="text-muted">'.$sSmallText.'</small>
-  		                </fieldset>';
+    	                <small class="text-muted">'.$sSmallText.'</small>';
+
+        $this->sHTML .= '<p class = "red_border">'.$sError.'<p>';
+
+        $this->sHTML .= '</fieldset>';
+        
 	}
 
 
@@ -92,6 +101,11 @@ class Form{
 //      <option>Architecture</option>
         $this->sHTML.='</select></fieldset>';
 
+    }
+
+
+    public function error($sInputName, $sMessage){
+        $this->aErrors[$sInputName] = $sMessage;
     }
 
 }

@@ -8,16 +8,22 @@ require_once('includes/types.php');
 //'<pre>';
 
 
- $iCurrentTypeId = 2;
+
 //check see if we have typeId in query string
 if(isset($_GET['typeid'])==true){
     $iCurrentTypeId = $_GET['typeid'];
+
+    $oType = new Type();
+    $oType->load($iCurrentTypeId);
+    echo View::renderType($oType);
+}else{
+
+    $aImages = TypeManager::listImages();
+    echo View::renderAllImages($aImages);
+
 }
 
-$oType = new Type();
-$oType->load($iCurrentTypeId);
 
-echo View::renderType($oType)
 
 ?>
 

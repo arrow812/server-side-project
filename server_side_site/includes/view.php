@@ -12,6 +12,8 @@ class View{
 
             //make types
 
+            $sHTML.='<li><a href="main.php">All
+                </a></li>';
             for($i=0; $i<count($aTypes); $i++){
                 $oType = $aTypes[$i];
                 $sHTML.='<li><a href="main.php?typeid='.$oType->iId.'">'.$oType->sTypeName.'
@@ -41,7 +43,38 @@ class View{
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
                                     <h1 class="brand-heading"></h1>
-                                    <p class="intro-text">image</p>
+                                    <p class="intro-text"></p>
+                                    <a href="#about" class="btn btn-circle page-scroll">
+                                        <i class="fa fa-angle-double-down animated"></i>
+                                    </a>
+                                    <a href="#about" class="btn btn-circle page-scroll">
+                                        <i class="fa fa-angle-double-up animated"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>';
+
+        }
+        return $sHTML;
+    }
+
+    static public function renderAllImages($aImages){
+
+        $sHTML = '';
+
+        for($i=0; $i<count($aImages); $i++){
+
+            $oImage = $aImages[$i];
+
+            $sHTML .= '<header class="intro" style="background-image:url(image/'.$oImage->sFile.')">
+                    <div class="intro-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <h1 class="brand-heading"></h1>
+                                    <p class="intro-text"></p>
                                     <a href="#about" class="btn btn-circle page-scroll">
                                         <i class="fa fa-angle-double-down animated"></i>
                                     </a>

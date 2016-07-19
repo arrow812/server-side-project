@@ -53,18 +53,18 @@ class Form{
 		$sError = ''; //looking for error input
 		if(isset($this->aErrors[$sInputName])==true){
 			$sError = $this->aErrors[$sInputName];
-
 		}
+
 
 		$this->sHTML.='<div class="form-group">
 		    <label for="'.$sInputName.'" class="col-sm-4 control-label">'.$sLabel.'</label>
 		    <div class="col-sm-8">
 		      <input type="text" class="form-control" id="'.$sInputName.'" name="'.$sInputName.'" 
 		      		  placeholder="'.$sLabel.'" value="'.$sData.'">
-		    	</div>
+		    	</div><h6>5555</h6>
 		  	</div>';
 
-		$this->sHTML .= '<p>'.$sError.'<p>';
+		$this->sHTML .= '<p>'ERROR'<p>';
 	}
 
 	
