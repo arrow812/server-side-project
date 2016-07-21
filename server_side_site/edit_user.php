@@ -57,10 +57,10 @@ if(isset($_POST['submit'])==true){
 
 //$oForm = new Form();
 $oForm->open('EDIT DETAILS','');
-$oForm->makeTextInput('first_name','First Name','Enter First Name','');
-$oForm->makeTextInput('last_name','Last Name','Enter Last Name','');
-$oForm->makeTextInput('email','Email','Enter Email','');
-$oForm->makeTextInput('password','Password','Enter Password','');
+$oForm->makeTextInput('','first_name','First Name','Enter First Name','');
+$oForm->makeTextInput('','last_name','Last Name','Enter Last Name','');
+$oForm->makeTextInput('','email','Email','Enter Email','');
+//$oForm->makeTextInput('password','Password','Enter Password','');
 
 $oForm->submit('UPDATE');
 

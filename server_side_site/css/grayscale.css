@@ -35,6 +35,10 @@ h3{
     padding-top: 100px
 }
 
+.text-muted {
+    color: #f33;
+}
+
 h6{
     margin: 0px;
 }

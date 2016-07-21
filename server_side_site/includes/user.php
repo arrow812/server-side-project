@@ -10,6 +10,7 @@ class User{
     public $sLastName;
     public $sEmail;
     public $sPassword;
+
     
     public function __construct(){
         $this->iId= 0;
@@ -17,6 +18,7 @@ class User{
         $this->sLastName='';
         $this->sEmail='';
         $this->sPassword='';
+
     }
     
     public function save(){
@@ -62,6 +64,7 @@ class User{
         $this->sLastName = $aRow['last_name'];
         $this->sEmail = $aRow['email'];
         $this->sPassword = $aRow['password'];
+
 
     }
 

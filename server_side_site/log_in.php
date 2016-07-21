@@ -12,10 +12,11 @@ $sMessage = '';
 $oForm = new Form();
 
 $oForm->open('LOG IN','');
-$oForm->makeTextInput('email','Email','Enter Email','');
-$oForm->makeTextInput('password','Password','Enter Password','');
+$oForm->makeTextInput('','email','Email','Enter Email','');
+$oForm->makeTextInput('password','password','Password','Enter Password','');
 $oForm->submit('Sign In');
 $oForm->close();
+
 
 
 if(isset($_POST['submit']) == true){
@@ -25,19 +26,16 @@ if(isset($_POST['submit']) == true){
 
    if($bSuccess == true){
 
-      if($_POST['password'] == $oUser->sPassword){
+      if(password_verify($_POST['password'] ,$oUser->sPassword)==true){
 
           $_SESSION['user_id'] = $oUser->iId;
 
-          //die(print_r($_SESSION));
-            //var_dump($_SESSION);
-
-//          echo'<pre>';
-//          print_r($_SESSION['user_id']);
-//          echo'</pre>';
+         //die(print_r($_SESSION));
+//            var_dump($_SESSION);
 
             header('Location: log_in_success.php');
       }
+
    }
 
     $sMessage = 'password and email didnt match';
@@ -47,7 +45,11 @@ if(isset($_POST['submit']) == true){
     echo $sMessage;
 
 //  echo'<pre>';
-//  print_r($oForm);
+//  print_r($oUser);
 //  echo'</pre>';
+
+//echo'<pre>';
+//echo ('testing password');
+//echo'</pre>';
 
   require_once('includes/footer.php');

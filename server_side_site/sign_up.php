@@ -5,40 +5,75 @@ require_once('includes/header.php');
 require_once('includes/form.php');
 require_once('includes/user.php');
 
+$oForm = new Form();
 
-if(isset($_POST['submit'])==true){
+    if(isset($_POST['submit'])==true) {
 
-    $oUser = new User();
+        if($_POST['first_name'] == ''){
+            $oForm->addError('first_name','Required');
+        }
 
-    $oUser->sFirstName = $_POST['first_name'];
-    $oUser->sLastName = $_POST['last_name'];
-    $oUser->sEmail = $_POST['email'];
-    $oUser->sPassword = $_POST['password'];
+        if($_POST['last_name'] == ''){
+            $oForm->addError('last_name','Required');
+        }
+        if($_POST['email'] == ''){
+            $oForm->addError('email','Required');
+        }
 
-    $oUser->save();
-
-//    header('location: main.php');
-
-}
-
-    $oForm = new Form();
-    $oForm->open('SIGN UP','sign up to add images!');
-    $oForm->makeTextInput('first_name','First Name','Enter First Name','');
-    $oForm->makeTextInput('last_name','Last Name','Enter Last Name','');
-    $oForm->makeTextInput('email','Email','Enter Email','we will never share your email ');
-    $oForm->makeTextInput('password','Password','Enter Password','');
-    $oForm->makeTextInput('password','Re-Enter Password','Re-Enter Password','');
-    $oForm->radio('i agree to the terms and conditions');
-    $oForm->submit('Join');
-    $oForm->close();
+        if($_POST['password'] == ''){
+            $oForm->addError('password','Required');
+        }
 
 
-  echo $oForm->sHTML;
+        if ($_POST['password'] != $_POST['password1']){
+            $oForm->addError('password','Passwords Must Match');
+        }
+
+        //die(print_r($_POST));
+
+        if(!isset($_POST['termsAgreed'])){
+            $oForm->addError('termsAgreed','Please Agree with Terms and Conditions');
+
+            //die('terms agreed failed');
+        }
+
+        //die('terms agreed passed');
+
+        if (count($oForm->aErrors) == 0) {
 
 
-require_once('includes/footer.php');
+            $oUser = new User();
+            $oUser->sFirstName = $_POST['first_name'];
+            $oUser->sLastName = $_POST['last_name'];
+            $oUser->sEmail = $_POST['email'];
+            $oUser->sPassword = password_hash($_POST['password'],PASSWORD_DEFAULT);
 
-?>
+
+            $oUser->save();
+
+            header('location: sign_up_success.php');
+        }
+    }
+
+        $oForm->open('SIGN UP','sign up to add images!');
+        $oForm->makeTextInput('','first_name','First Name','Enter First Name','');
+        $oForm->makeTextInput('','last_name','Last Name','Enter Last Name','');
+        $oForm->makeTextInput('','email','Email','Enter Email','we will never share your email ');
+        $oForm->makeTextInput('password','password','Password','Enter Password','');
+        $oForm->makeTextInput('password','password1','Re-Enter Password','Re-Enter Password','');
+        $oForm->checkbox('i agree to the terms and conditions','termsAgreed');
+        $oForm->submit('Join');
+        $oForm->close();
+
+
+      echo $oForm->sHTML;
+
+
+    require_once('includes/footer.php');
+
+    ?>
+
+
 
 <!---->
 <!--<form class="form">-->

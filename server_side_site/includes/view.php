@@ -31,6 +31,7 @@ class View{
 
         $sHTML = '';
 
+
         $aImages = $oType->aImages;
 
         for($i=0; $i<count($aImages); $i++){
@@ -43,13 +44,16 @@ class View{
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
                                     <h1 class="brand-heading"></h1>
-                                    <p class="intro-text"></p>
+                                    <p class="intro-text">'.print_r($oImage).'</p>
                                     <a href="#about" class="btn btn-circle page-scroll">
                                         <i class="fa fa-angle-double-down animated"></i>
                                     </a>
                                     <a href="#about" class="btn btn-circle page-scroll">
                                         <i class="fa fa-angle-double-up animated"></i>
+                                        
                                     </a>
+                                 
+                              
                                 </div>
                             </div>
                         </div>

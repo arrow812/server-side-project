@@ -21,6 +21,6 @@ foreach($oCart->aContents as $iProductId=>$iQuantity){
 	$oOrder->attach($iProductId,$iQuantity);
 }
 
-echo '<pre>';
-print_r($oOrder);
-echo '</pre>';
+//echo '<pre>';
+//print_r($oOrder);
+//echo '</pre>';

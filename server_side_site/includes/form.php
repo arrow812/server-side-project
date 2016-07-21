@@ -9,7 +9,7 @@ class Form{
 
 	public $sHTML;
 	public $aData;
-	public $aError;
+	public $aErrors;
 
 	public function __construct(){
 		$this->sHTML='';
@@ -19,26 +19,29 @@ class Form{
 
 	public function open($sFormName,$sH6){
 
-		$this->sHTML.='<form action="" method="POST" enctype="multipart/form-data" class="form">
+		$this->sHTML.='<form action=" " method="POST" enctype="multipart/form-data" class="form">
     	<h3>'.$sFormName.'</h3>
-    	<h5>'.$sH6.'</h5>'
-		;
+    	<h5>'.$sH6.'</h5>';
 	}
 
 	public function close(){
 		$this->sHTML .='</form>';
 	}
 
-	public function makeTextInput($sInputName,$sLabel,$sPlaceholder,$sSmallText){
+	public function makeTextInput($sType="text",$sInputName,$sLabel,$sPlaceholder,$sSmallText){
 		$sData ='';
+
+		if(isset($_POST[$sInputName])){
+			$sData = $_POST[$sInputName];
+		}
 
         //sticky data
         if(isset($this->aData[$sInputName])==true){
 			$sData = $this->aData[$sInputName];
         }
 
-
         $sError = ''; //looking for error input
+		
         if(isset($this->aErrors[$sInputName])==true){
             $sError = $this->aErrors[$sInputName];
         }
@@ -46,12 +49,14 @@ class Form{
 
 		$this->sHTML .='<fieldset class="form-group" >
     	                <label for="'.$sInputName.'">'.$sLabel.'</label>
-    	                <input type="text" class="form-control" id="'.$sInputName.'" name="'.$sInputName.'" 
-    	                        placeholder="'.$sPlaceholder.'" value="'.$sData.'">
-    	                <small class="text-muted">'.$sSmallText.'</small>';
-
-        $this->sHTML .= '<p class = "red_border">'.$sError.'<p>';
-
+    	                <input type="'.$sType.'" class="form-control" id="'.$sInputName.'" name="'.$sInputName.'" 
+    	                        placeholder="'.$sPlaceholder.'" 
+    	                        
+    	                        
+    	                        
+    	                        value="'.$sData.'">
+    	                <small class="text-muted"> '. $sError.'</small>';
+		
         $this->sHTML .= '</fieldset>';
         
 	}
@@ -66,15 +71,25 @@ class Form{
 	}
 
 
-    public function radio($sLabel){
-        $this->sHTML .='<div class="radio ">
+    public function checkbox($sText,$sInputName){
+
+		$sError = ''; //looking for error input
+
+		////log error in aError
+		if(isset($this->aErrors[$sInputName])==true){
+			$sError = $this->aErrors[$sInputName];
+		}
+
+        $this->sHTML .='<div class="checkbox">
                        <label>
-                       <input type="radio"  id="'.$sLabel.'"  name="'.$sLabel.'" value="option3 toggle">
-                        '.$sLabel.'
-                       </label>
+                       <input type="checkbox"  id="'.$sInputName.'"  name="'.$sInputName.'" value="1">
+                        '.$sText.'
+                       </label><br>';
+        $this->sHTML .= '<small class="text-muted">'.$sError.'<small>
                        </div>';
     }
 
+	
 
     public function chooseFile($sLabel,$sInputName,$sSmallText)
 	{
@@ -87,7 +102,7 @@ class Form{
 
 
     public function selectInput($sLabel,$sInputName, $aOptions){
-
+		
         $this->sHTML.='<fieldset class="form-group">
         <label for="'.$sInputName.'">'.$sLabel.'</label>
          <select class="form-control" id="'.$sInputName.'" name="'.$sInputName.'">';
@@ -104,7 +119,7 @@ class Form{
     }
 
 
-    public function error($sInputName, $sMessage){
+    public function addError($sInputName, $sMessage){
         $this->aErrors[$sInputName] = $sMessage;
     }
 

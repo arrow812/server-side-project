@@ -138,7 +138,6 @@ class Form{
 
 
 
-
 	public function makeSubmit($sLabel){
 		$this->sHTML .='<div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
