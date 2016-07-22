@@ -6,7 +6,18 @@
 require_once('includes/header.php');
 //require_once('includes/user.php');
 
-echo'<h1>LOGIN SUCCESSFUL</h1>';
+$sHTML= '<section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>LOG IN SUCCESS!!</h2>
+                
+            </div>
+        </div>
+    </section>';
+
+echo $sHTML;
+
+
 header( "refresh:1;url=main.php" );
 
 //echo'<pre>';

@@ -45,10 +45,10 @@ class View{
                                 <div class="col-md-8 col-md-offset-2">
                                     <h1 class="brand-heading"></h1>
                                     <p class="intro-text">'.print_r($oImage).'</p>
-                                    <a href="#about" class="btn btn-circle page-scroll">
+                                    <a href="downvote.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
                                         <i class="fa fa-angle-double-down animated"></i>
                                     </a>
-                                    <a href="#about" class="btn btn-circle page-scroll">
+                                    <a href="vote_up.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
                                         <i class="fa fa-angle-double-up animated"></i>
                                         
                                     </a>
