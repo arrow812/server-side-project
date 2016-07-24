@@ -75,6 +75,7 @@ a:focus {
 }
 
 
+
 .table{
     width:60%;
     margin:50px auto 30px auto ;
@@ -329,6 +330,8 @@ a:focus {
 }
 
 .btn {
+    margin-top:8px;
+    /*font-size:15px;*/
     border-radius: 0;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -336,6 +339,10 @@ a:focus {
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+}
+
+.color-admin{
+    color:#C52F31!important;
 }
 
 .btn-default {

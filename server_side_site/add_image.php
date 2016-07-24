@@ -1,8 +1,9 @@
 
 <?php
-
-require_once('includes/connection.php');
+ob_start();
 require_once('includes/header.php');
+require_once('includes/connection.php');
+
 require_once('includes/form.php');
 require_once('includes/type_manager.php');
 require_once('includes/images.php');
@@ -38,9 +39,12 @@ $oForm = new Form();
 
         $oForm->aData = $_POST;
 
-        echo'<pre>';
-        echo print_r($aFileDetails);
-        echo'</pre>';
+
+        //testing
+
+//        echo'<pre>';
+//        echo print_r($aFileDetails);
+//        echo'</pre>';
 
         //validate input data
 //
@@ -78,11 +82,20 @@ $oForm = new Form();
 
 $oForm->open('ADD IMAGE','');
 $oForm->selectInput('Choose STYLE','type_id',TypeManager::listTypes());
-$oForm->chooseFile('ADD IMAGE','file','images must be over 1kb');
+$oForm->chooseFile('ADD IMAGE','file','');
 $oForm->submitFile('ADD IMAGE');
 $oForm->close();
 
 echo $oForm->sHTML;
+
+
+if(isset($_POST['submit'])){
+    header('Location:main.php?typeid='.$oImage->iTypeId);
+}
+
+
+
+
 
 require_once('includes/footer.php');
 

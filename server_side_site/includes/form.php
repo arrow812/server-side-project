@@ -67,7 +67,7 @@ class Form{
     }
 
 	public function submitFile($sLabel){
-		$this->sHTML .='<button type="submit" name="submit" value="Upload Image" class="btn btn-primary">'.$sLabel.'</button>';
+		$this->sHTML .='<button type="submit" name="submit" value="" class="btn btn-primary">'.$sLabel.'</button>';
 	}
 
 

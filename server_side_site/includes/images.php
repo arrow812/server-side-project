@@ -44,14 +44,14 @@ class Image{
         $this->iUserId = $aRow['user_id'];
     }
 
-        
+
     public function save(){
         $oConnection = new Connection();
 
         if($this->iId == 0){
 
             $sSQL = "INSERT INTO images (file, type_id, user_id) 
-                    VALUES ( '".$this->sFile."', '".$this->iTypeId."', '".$this->iUserId."');";
+                    VALUES ( '".$this->sFile."', '".$this->iTypeId."', '".$this->iUserId."')";
 
             $bSuccess =  $oConnection->query($sSQL);
 
@@ -67,16 +67,37 @@ class Image{
             }
         }
     }
+
+
+    function delete(){
+
+        $oConnection = new Connection;
+
+        $sSQL = "DELETE FROM images
+				WHERE id=".$this->iId;
+
+
+        //die($this->iId);
+
+        $oConnection->query($sSQL);
+
+        if ($oConnection->query($sSQL) == true) {
+            echo 'Image Deleted';
+        } else {
+            echo 'error deleting Image ';
+        }
+    }
 }
 
 
 //testing
-
+//
 // $oImage = new Image;
 
 // $oImage->sFile='testing.jpg';
-// $oImage->load(2);
-//// $oImage->iUserId= 17;
+//
+//$oImage->load(41);
+//$oImage->delete();
 //
 //// $oImage->save();
 //

@@ -9,10 +9,9 @@ class Vote{
     public $iUserId;
     public $iImageId;
 
-
     public function __construct(){
         $this->iId=0;
-        //$this->iValue=0;
+        $this->iValue=0;
         $this->iUserId=0;
         $this->iImageId=0;
 
@@ -34,18 +33,6 @@ class Vote{
 
         }
     }
-
-
-    // public function remove(){
-
-    //     $oConnection = new Connection;
-
-    //     $sSQL = "INSERT INTO votes (value, user_id, image_id) 
-    //             VALUES ('-1', '".$this->iUserId."', '".$this->iImageId."')";
-
-
-    // }
-
 
 }
 

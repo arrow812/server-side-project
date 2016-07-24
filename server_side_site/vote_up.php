@@ -14,11 +14,13 @@ $oVote->save();
 
 
 
-// echo '<pre>';
-// print_r($oVote);
-// echo '</pre>';
+ echo '<pre>';
+ print_r($oVote);
+ echo '</pre>';
 
 //redirect
+
+
 
 header('Location: main.php');
 ?>

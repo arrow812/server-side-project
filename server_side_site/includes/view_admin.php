@@ -10,22 +10,20 @@ class View{
                             <ul class="dropdown-menu">
                                  <li class="hidden"><a href="#page-top"></a></li>';
 
-            //make types
+        //make types
 
-            $sHTML.='<li><a href="main.php">All
+        $sHTML.='<li><a href="main_admin.php">All</a></li>';
+        for($i=0; $i<count($aTypes); $i++){
+            $oType = $aTypes[$i];
+            $sHTML.='<li><a href="main_admin.php?typeid='.$oType->iId.'">'.$oType->sTypeName.'
                 </a></li>';
-            for($i=0; $i<count($aTypes); $i++){
-                $oType = $aTypes[$i];
-                $sHTML.='<li><a href="main.php?typeid='.$oType->iId.'">X '.$oType->sTypeName.'
-                </a></li>';
-            }
+        }
 
-            $sHTML.='</ul>
+        $sHTML.='</ul>
                     </div>';
 
-            return $sHTML;
+        return $sHTML;
     }
-
 
     static public function renderType($oType){
 
@@ -45,14 +43,18 @@ class View{
                                 <div class="col-md-8 col-md-offset-2">
                                     <h1 class="brand-heading"></h1>
                                     <p class="intro-text"></p>
-                                    <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
-                                        <i class="fa fa-angle-down animated"></i>
+                                    <a href="vote_down.php?imageid='.$oImage->iId.'" class=" btn btn-circle page-scroll">
+                                        <i class=" fa fa-angle-down animated"></i>
                                     </a>
-                                    <a href="vote_up.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
-                                        <i class="fa fa-angle-up animated"></i>
+                                    <a href="vote_up.php?imageid='.$oImage->iId.'" class=" btn btn-circle page-scroll">
+                                        <i class="  fa fa-angle-up animated"></i>
                                         
                                     </a>
                                  
+                              <a href="delete_image.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
+                                        <i class=" color-admin fa fa-times"></i>
+                                    </a>
+                              
                               
                                 </div>
                             </div>
@@ -82,9 +84,14 @@ class View{
                                     <a href="#about" class="btn btn-circle page-scroll">
                                         <i class="fa fa-angle-double-down animated"></i>
                                     </a>
-                                    <a href="#about" class="btn btn-circle page-scroll ">
+                                    <a href="#about" class="btn btn-circle page-scroll">
                                         <i class="fa fa-angle-double-up animated"></i>
                                     </a>
+                                    
+                                    <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -95,9 +102,3 @@ class View{
         return $sHTML;
     }
 }
-
-                        
-
-
-
-

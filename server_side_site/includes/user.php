@@ -10,6 +10,7 @@ class User{
     public $sLastName;
     public $sEmail;
     public $sPassword;
+    public $bAdmin;
 
     
     public function __construct(){
@@ -18,6 +19,7 @@ class User{
         $this->sLastName='';
         $this->sEmail='';
         $this->sPassword='';
+        $this->bAdmin = 0;
 
     }
     
@@ -45,7 +47,9 @@ class User{
             $oConnection->query($sSQL);
         }
     }
-    
+
+
+    //not required for this project
     public function load($iId){
         $oConnection = new Connection;
 
@@ -72,7 +76,7 @@ class User{
 
         $oConnection = new Connection;
 
-        $sSQL = "SELECT id, password, first_name, last_name, email
+        $sSQL = "SELECT id, password, first_name, last_name, email, admin
                  FROM users
                  WHERE email ='".$oConnection->escape($sEmail)."'";
 
@@ -86,6 +90,7 @@ class User{
         $this->sLastName = $aRow['last_name'];
         $this->sEmail = $aRow['email'];
         $this->sPassword = $aRow['password'];
+        $this->bAdmin = $aRow['admin'];
 
             return true;
         }else{

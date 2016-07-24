@@ -54,7 +54,7 @@ class Product{
 				WHERE id=".$this->iId;
 
 		$oConnection->query($sSQL);
-		echo $sSQL;
+		//echo $sSQL;
 
 		if($oConnection->query($sSQL)==true){
 			echo "Record Deleted";

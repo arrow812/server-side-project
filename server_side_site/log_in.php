@@ -18,7 +18,6 @@ $oForm->submit('Sign In');
 $oForm->close();
 
 
-
 if(isset($_POST['submit']) == true){
     //echo('test 1');
    $oUser= new User();
@@ -30,10 +29,13 @@ if(isset($_POST['submit']) == true){
 
           $_SESSION['user_id'] = $oUser->iId;
 
-         //die('password correct');
-//            var_dump($_SESSION);
 
-            header('Location: log_in_success.php');
+        if(($oUser->bAdmin)== true){
+          header('Location: main_admin.php');
+
+             }else{
+              header('Location: log_in_success.php');
+          }
       }
 
    }
@@ -44,9 +46,9 @@ if(isset($_POST['submit']) == true){
     echo $oForm->sHTML;
     echo $sMessage;
 
- echo'<pre>';
- print_r($oUser);
- echo'</pre>';
+// echo'<pre>';
+// print_r($oUser);
+// echo'</pre>';
 
 //echo'<pre>';
 //echo ('testing password');

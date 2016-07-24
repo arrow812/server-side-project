@@ -45,17 +45,38 @@ class Type{
 
 		}
 	}
+
+
+
+	public function save(){
+		$oConnection = new Connection;
+
+		if($this->iId == 0){
+
+		$sSQL = "INSERT INTO types (type_name) 
+                    VALUES ('".$this->sTypeName."')";
+
+		$bSuccess =  $oConnection->query($sSQL);
+
+			if($bSuccess== true) {
+			$this->iId = $oConnection->getInsertId();
+
+
+			}
+		}
+	}
 }
 
-//testing
 
-//$oType = new Type();
-//$oType->load(3);
+//testing
 //
+//$oType = new Type;
+//$oType->sTypeName = 'Trees';
+//$oType->save();
+////
 //echo '<pre>';
 //print_r($oType);
 //echo '</pre>';
-
 
 
 ?>
