@@ -16,7 +16,7 @@ class View{
                 </a></li>';
             for($i=0; $i<count($aTypes); $i++){
                 $oType = $aTypes[$i];
-                $sHTML.='<li><a href="main.php?typeid='.$oType->iId.'">X '.$oType->sTypeName.'
+                $sHTML.='<li><a href="main.php?typeid='.$oType->iId.'"> '.$oType->sTypeName.'
                 </a></li>';
             }
 
@@ -44,7 +44,7 @@ class View{
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
                                     <h1 class="brand-heading"></h1>
-                                    <p class="intro-text"></p>
+                                    <p class="intro-text">'.$oImage->iScore.'</p>
                                     <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
                                         <i class="fa fa-angle-down animated"></i>
                                     </a>
@@ -78,13 +78,16 @@ class View{
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
                                     <h1 class="brand-heading"></h1>
-                                    <p class="intro-text"></p>
-                                    <a href="#about" class="btn btn-circle page-scroll">
-                                        <i class="fa fa-angle-double-down animated"></i>
+                                    <p class="intro-text">'.$oImage->iScore.'</p>
+                                    <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
+                                        <i class="fa fa-angle-down animated"></i>
                                     </a>
-                                    <a href="#about" class="btn btn-circle page-scroll ">
-                                        <i class="fa fa-angle-double-up animated"></i>
+                                    <a href="vote_up.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
+                                        <i class="fa fa-angle-up animated"></i>
+                                        
                                     </a>
+                                 
+                              
                                 </div>
                             </div>
                         </div>

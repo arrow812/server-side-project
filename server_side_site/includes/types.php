@@ -29,7 +29,13 @@ class Type{
 		$this->sTypeName= $aRow['type_name'];
 
 		//query all type IDs of the image
-		$sSQL = 'SELECT id FROM images WHERE type_id = '.$iId;
+		$sSQL =
+			'SELECT images.id, SUM(value) score
+			FROM images
+			LEFT OUTER JOIN votes ON images.id=image_id
+			WHERE type_id = '.$iId .' GROUP BY images.id
+			ORDER BY score DESC';
+
 		
 		
 		// echo($sSQL);

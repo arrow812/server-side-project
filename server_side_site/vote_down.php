@@ -6,22 +6,29 @@ require_once('includes/vote.php');
 require_once('includes/images.php');
 require_once('includes/types.php');
 
-$oVote = new Vote();
 
+if(!isset($_SESSION['user_id'])){
+	Header('Location:log_in.php');
+}else{
+
+$oVote = new Vote();
 $oVote->iImageId = $_GET['imageid'];
 $oVote->iValue = -1 ;
 $oVote->iUserId = $_SESSION['user_id'];
-
 $oVote->save();
 
 
+$oImage = new Image();
+$oImage->load($_GET['imageid']);
 
 // echo '<pre>';
 // print_r($oImage->iTypeId);
 // echo '</pre>';
 
-$iCurrentTypeId =
+// $iCurrentTypeId =
+//header('Location: main.php?typeid='.$oVote->iTypeId);
+header('Location: main.php?typeid='.$oImage->iTypeId);
 
-//header('Location: main.php');
-header('Location: main.php?typeid='.$iTypeId.');
-?>
+}
+
+ ?>

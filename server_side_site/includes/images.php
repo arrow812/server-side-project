@@ -16,6 +16,7 @@ class Image{
     public $sFile;
     public $iTypeId;
     public $iUserId;
+    public $iScore;
 
 
     public function __construct(){
@@ -23,6 +24,7 @@ class Image{
         $this->sFile='';
         $this->iTypeId=0;
         $this->iUserId=0;
+        $this->iScore=0;
     }
 
 
@@ -42,6 +44,16 @@ class Image{
         $this->sFile = $aRow['file'];
         $this->iTypeId = $aRow['type_id'];
         $this->iUserId = $aRow['user_id'];
+
+
+        $sSQL = "SELECT SUM(value) score
+            FROM votes
+            WHERE image_id =".$iId;
+
+        $oResultSet = $oConnection->query($sSQL);
+
+        $aRow = $oConnection->fetch($oResultSet);
+        $this->iScore = $aRow['score'];
     }
 
 
@@ -69,12 +81,12 @@ class Image{
     }
 
 
-    function delete(){
+   public function delete(){
 
         $oConnection = new Connection;
 
         $sSQL = "DELETE FROM images
-				WHERE id=".$this->iId;
+				WHERE id=1818 ";
 
 
         //die($this->iId);
@@ -92,11 +104,11 @@ class Image{
 
 //testing
 //
-// $oImage = new Image;
+//$oImage = new Image;
 
 // $oImage->sFile='testing.jpg';
 //
-//$oImage->load(41);
+//$oImage->load(1799);
 //$oImage->delete();
 //
 //// $oImage->save();

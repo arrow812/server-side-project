@@ -6,14 +6,12 @@ require_once('includes/images.php');
 
 $oImage = new Image;
 
-$oImage->load($oImage->iId);
+$oImage->load($_GET['imageid']);
 
 $oImage->delete();
 
 
-
-die($oImage->iTypeId);
+// die($oImage->iTypeId);
 
 header('Location:main_admin.php?typeid='.$oImage->iTypeId);
 
-// header('Location:main.php?genreid='.$oProduct->iGenreId);
