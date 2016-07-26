@@ -27,82 +27,24 @@ if(isset($_GET['typeid'])==true){
 
 ?>
 
-    <!-- Intro Header -->
-    <!--     <header class="intro" style="background-image:url(image/a.jpg)">
-            <div class="intro-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h1 class="brand-heading"></h1>
-                            <p class="intro-text">image</p>
-                            <a href="#about" class="btn btn-circle page-scroll">
-                                <i class="fa fa-angle-double-down animated"></i>
-                            </a>
-                            <a href="#about" class="btn btn-circle page-scroll">
-                                <i class="fa fa-angle-double-up animated"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-           <header class="intro" style="background-image:url(image/b.jpg)">
-            <div class="intro-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h1 class="brand-heading"></h1>
-                            <p class="intro-text">image</p>
-                            <a href="#about" class="btn btn-circle page-scroll">
-                                <i class="fa fa-angle-double-down animated"></i>
-                            </a>
-                            <a href="#about" class="btn btn-circle page-scroll">
-                                <i class="fa fa-angle-double-up animated"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-           <header class="intro" style="background-image:url(image/c.jpg)">
-            <div class="intro-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h1 class="brand-heading"></h1>
-                            <p class="intro-text">image</p>
-                            <a href="#about" class="btn btn-circle page-scroll">
-                                <i class="fa fa-angle-double-down animated"></i>
-                            </a>
-                            <a href="#about" class="btn btn-circle page-scroll">
-                                <i class="fa fa-angle-double-up animated"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-           <header class="intro" style="background-image:url(image/d.jpg)">
-            <div class="intro-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h1 class="brand-heading"></h1>
-                            <p class="intro-text">image</p>
-                            <a href="#about" class="btn btn-circle page-scroll">
-                                <i class="fa fa-angle-double-down animated"></i>
-                            </a>
-                            <a href="#about" class="btn btn-circle page-scroll">
-                                <i class="fa fa-angle-double-up animated"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header> -->
+<!--           <header class="intro" style="background-image:url(image/d.jpg)">-->
+<!--            <div class="intro-body">-->
+<!--                <div class="container">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-8 col-md-offset-2">-->
+<!--                            <h1 class="brand-heading"></h1>-->
+<!--                            <p class="intro-text">image</p>-->
+<!--                            <a href="#about" class="btn btn-circle page-scroll">-->
+<!--                                <i class="fa fa-angle-double-down animated"></i>-->
+<!--                            </a>-->
+<!--                            <a href="#about" class="btn btn-circle page-scroll">-->
+<!--                                <i class="fa fa-angle-double-up animated"></i>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </header> -->
 
 
 
@@ -111,7 +53,7 @@ if(isset($_GET['typeid'])==true){
     <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>About this Site..</h2>
+                <h2>Admin Page</h2>
                 <p>These Images will continue down as more Members upload them..</p>
                 <a href="http://startbootstrap.com/template-overviews/grayscale/">The theme is open source, and you can use it for any purpose, personal or commercial</a>
             </div>

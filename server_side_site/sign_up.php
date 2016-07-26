@@ -41,7 +41,6 @@ $oForm = new Form();
 
         if (count($oForm->aErrors) == 0) {
 
-
             $oUser = new User();
             $oUser->sFirstName = $_POST['first_name'];
             $oUser->sLastName = $_POST['last_name'];
@@ -68,8 +67,14 @@ $oForm = new Form();
 
       echo $oForm->sHTML;
 
+require_once('includes/footer.php');
 
-    require_once('includes/footer.php');
+
+
+
+
+
+
 
     ?>
 

@@ -44,11 +44,11 @@ class View{
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
                                     <h1 class="brand-heading"></h1>
-                                    <p class="intro-text">'.$oImage->iScore.'</p>
-                                    <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
+                                    <p class="intro-text toggle">VOTE COUNT '.$oImage->iScore.'</p>
+                                    <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll toggle">
                                         <i class="fa fa-angle-down animated"></i>
                                     </a>
-                                    <a href="vote_up.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
+                                    <a href="vote_up.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll toggle">
                                         <i class="fa fa-angle-up animated"></i>
                                         
                                     </a>
@@ -72,29 +72,35 @@ class View{
 
             $oImage = $aImages[$i];
 
-            $sHTML .= '<header class="intro" style="background-image:url(image/'.$oImage->sFile.')">
+
+            if(isset($oImage)){
+
+                $sHTML .= '<header class="intro" style="background-image:url(image/'.$oImage->sFile.')">
                     <div class="intro-body">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
                                     <h1 class="brand-heading"></h1>
-                                    <p class="intro-text">'.$oImage->iScore.'</p>
-                                    <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
+                                    <p class="intro-text toggle">VOTE COUNT '.$oImage->iScore.'</p>
+                                    <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll toggle">
                                         <i class="fa fa-angle-down animated"></i>
                                     </a>
-                                    <a href="vote_up.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
+                                    <a href="vote_up.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll toggle">
                                         <i class="fa fa-angle-up animated"></i>
-                                        
+                                
                                     </a>
                                  
-                              
                                 </div>
                             </div>
                         </div>
                     </div>
                 </header>';
 
+            }
+
+
         }
+
         return $sHTML;
     }
 }

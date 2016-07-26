@@ -13,7 +13,7 @@ $oForm = new Form();
 
 $oForm->open('LOG IN','');
 $oForm->makeTextInput('','email','Email','Enter Email','');
-$oForm->makeTextInput('password','password','Password','Enter Password','');
+$oForm->makeTextInput('passsword','password','Password','Enter Password','');
 $oForm->submit('Sign In');
 $oForm->close();
 

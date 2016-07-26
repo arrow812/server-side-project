@@ -50,6 +50,14 @@ require_once('connection.php');
 
 </head>
 
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $(".toggle").toggle(100);
+        });
+    });
+</script>
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
@@ -103,7 +111,17 @@ $sHTML='<ul class="nav navbar-nav ">';
                 
                                <li>
                                  <a class="page-scroll" href="log_out.php">log out</a>
+                               </li>
+
+
+                               <li>
+                                 <button class="btn btn-primary"><i class="fa fa-angle-up animated"></i></button>
+
+                                                          
                                </li>';
+
+
+
                     }
 
 

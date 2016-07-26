@@ -24,7 +24,7 @@
     </div>
 
     <div class="container text-center">
-        <p>Copyright &copy; pixette 2016</p>
+        <p> &copy; Pixette 2016</p>
     </div>
 </section>
 

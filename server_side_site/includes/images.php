@@ -17,6 +17,7 @@ class Image{
     public $iTypeId;
     public $iUserId;
     public $iScore;
+    public $iVisible;
 
 
     public function __construct(){
@@ -25,6 +26,7 @@ class Image{
         $this->iTypeId=0;
         $this->iUserId=0;
         $this->iScore=0;
+        $this->iVisible=0;
     }
 
 
@@ -32,9 +34,10 @@ class Image{
 
         $oConnection = new Connection();
 
-            $sSQL = "SELECT id,file,type_id,user_id 
+            $sSQL = "SELECT id,file,type_id,user_id,visible 
 	        FROM images
-	        WHERE id =".($iId);
+	        WHERE visible= 1
+	        AND id =".($iId);
        
         $oResultSet = $oConnection->query($sSQL);
 
@@ -44,6 +47,7 @@ class Image{
         $this->sFile = $aRow['file'];
         $this->iTypeId = $aRow['type_id'];
         $this->iUserId = $aRow['user_id'];
+        $this->iVisible = $aRow['visible'];
 
 
         $sSQL = "SELECT SUM(value) score
@@ -62,8 +66,8 @@ class Image{
 
         if($this->iId == 0){
 
-            $sSQL = "INSERT INTO images (file, type_id, user_id) 
-                    VALUES ( '".$this->sFile."', '".$this->iTypeId."', '".$this->iUserId."')";
+            $sSQL = "INSERT INTO images (file, type_id, user_id, visible) 
+                    VALUES ( '".$this->sFile."', '".$this->iTypeId."', '".$this->iUserId."','1')";
 
             $bSuccess =  $oConnection->query($sSQL);
 
@@ -81,25 +85,23 @@ class Image{
     }
 
 
-   public function delete(){
+
+   public function remove(){
 
         $oConnection = new Connection;
 
-        $sSQL = "DELETE FROM images
-				WHERE id=1818 ";
+        $sSQL = "UPDATE images
+                  SET visible=0
+                  WHERE id = ".$this->iId;
 
-
-        //die($this->iId);
 
         $oConnection->query($sSQL);
 
-        if ($oConnection->query($sSQL) == true) {
-            echo 'Image Deleted';
-        } else {
-            echo 'error deleting Image ';
-        }
-    }
+   }
+
 }
+
+
 
 
 //testing

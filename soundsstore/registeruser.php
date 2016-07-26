@@ -7,7 +7,7 @@
 // print_r($_POST);
 // echo '</pre>';
 
-
+require_once('includes/connection.php');
 require_once('includes/user.php');
 require_once('includes/header.php');
 require_once('includes/form.php');

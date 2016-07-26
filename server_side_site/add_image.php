@@ -3,7 +3,6 @@
 ob_start();
 require_once('includes/header.php');
 require_once('includes/connection.php');
-
 require_once('includes/form.php');
 require_once('includes/type_manager.php');
 require_once('includes/images.php');
@@ -59,7 +58,6 @@ $oForm = new Form();
 //        echo print_r($_POST['id']);
 //        echo'</pre>';
 
-        //$oImage->iId = $_POST['id'];
         $oImage->sFile = $sNewName;
         $oImage->iTypeId = $_POST['type_id'];
         $oImage->iUserId = $_SESSION['user_id'];
@@ -72,12 +70,6 @@ $oForm = new Form();
 //        $this->iTypeId=$aRow['type_id'];
 //        $this->iUserId=$aRow['user_id'];
 
-
-
-        //redirect browser to new page
-        //header('Location:main.php');
-        
-        
 }
 
 $oForm->open('ADD IMAGE','');
@@ -92,9 +84,6 @@ echo $oForm->sHTML;
 if(isset($_POST['submit'])){
     header('Location:main.php?typeid='.$oImage->iTypeId);
 }
-
-
-
 
 
 require_once('includes/footer.php');

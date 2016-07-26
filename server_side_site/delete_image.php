@@ -8,10 +8,10 @@ $oImage = new Image;
 
 $oImage->load($_GET['imageid']);
 
-$oImage->delete();
+$oImage->remove();
 
 
 // die($oImage->iTypeId);
 
-header('Location:main_admin.php?typeid='.$oImage->iTypeId);
+header('Location:main_admin.php');
 

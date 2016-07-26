@@ -28,13 +28,18 @@ class TypeManager{
     }
 
 
+
+
+
     static public function listImages(){
 
         $aImages = [];
 
         $oConnection = new Connection;
 
-        $sSQL = 'SELECT * FROM images';
+        $sSQL = 'SELECT * 
+                  FROM images
+                  WHERE visible = 1';
 
         $oResultSet = $oConnection->query($sSQL);
 
@@ -54,7 +59,9 @@ class TypeManager{
         
         $oConnection = new Connection;
 
-        $sSQL = 'SELECT id,type_name FROM types';
+        $sSQL = 'SELECT id,type_name 
+                FROM types
+                WHERE visible = 1';
 
         $oResultSet = $oConnection->query($sSQL);
 
@@ -69,7 +76,7 @@ class TypeManager{
 
 // test...
 // echo '<pre>';
-// print_r(TypeManager::listImages());
+// print_r(TypeManager::listTypes());
 // echo '</pre>';
 //
 // echo '<pre>';

@@ -1,5 +1,9 @@
 <?php
 
+
+
+
+
 class View{
 
     static public function renderNav($aTypes){
@@ -15,8 +19,10 @@ class View{
         $sHTML.='<li><a href="main_admin.php">All</a></li>';
         for($i=0; $i<count($aTypes); $i++){
             $oType = $aTypes[$i];
-            $sHTML.='<li><a href="main_admin.php?typeid='.$oType->iId.'">'.$oType->sTypeName.'
-                </a></li>';
+            $sHTML.='<li><a href="main_admin.php?typeid='.$oType->iId.'">
+                              
+                    '.$oType->sTypeName.'
+                    </a></li>';
         }
 
         $sHTML.='</ul>
@@ -51,9 +57,7 @@ class View{
                                         
                                     </a>
                                  
-                              <a href="delete_image.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
-                                        <i class=" color-admin fa fa-times"></i>
-                                    </a>
+                       
                               
                               
                                 </div>
@@ -63,8 +67,13 @@ class View{
                 </header>';
 
         }
+
+
+
         return $sHTML;
     }
+
+
 
     static public function renderAllImages($aImages){
 
@@ -72,33 +81,46 @@ class View{
 
         for($i=0; $i<count($aImages); $i++){
 
+            
+            
             $oImage = $aImages[$i];
 
-            $sHTML .= '<header class="intro" style="background-image:url(image/'.$oImage->sFile.')">
+
+
+                $sHTML .= '<header class="intro" style="background-image:url(image/' . $oImage->sFile . ')">
                     <div class="intro-body">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
                                     <h1 class="brand-heading"></h1>
                                     <p class="intro-text"></p>
-                                    <a href="#about" class="btn btn-circle page-scroll">
-                                        <i class="fa fa-angle-double-down animated"></i>
+                                    <a href="vote_down.php?imageid=' . $oImage->iId . '" class=" btn btn-circle page-scroll">
+                                        <i class=" fa fa-angle-down animated"></i>
                                     </a>
-                                    <a href="#about" class="btn btn-circle page-scroll">
-                                        <i class="fa fa-angle-double-up animated"></i>
+                                    <a href="vote_up.php?imageid=' . $oImage->iId . '" class=" btn btn-circle page-scroll">
+                                        <i class="  fa fa-angle-up animated"></i>                                        
                                     </a>
-                                    
-                                    <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                    
+                                 
+                                     <a href="delete_image.php?imageid=' . $oImage->iId . '" class="btn btn-circle page-scroll">
+                                        <i class=" color-admin fa fa-times"></i>
+                                    </a>                              
+                              
                                 </div>
                             </div>
                         </div>
                     </div>
                 </header>';
 
+
         }
+
+//        echo'<pre>';
+//        print_r ($aImages);
+//        echo'</pre>';
+
         return $sHTML;
+
     }
 }
+
+
