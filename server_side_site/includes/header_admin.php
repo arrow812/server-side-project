@@ -78,8 +78,6 @@ $aTypes = TypeManager::getTypes();
 
 echo View::renderNav($aTypes);
 
-
-
 //                <!-- <div class="dropdown nav navbar-nav">
 //                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">View by Type
 //                          <span class="caret"></span></button>

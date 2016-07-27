@@ -10,7 +10,6 @@ require_once('connection.php');
 require_once('types.php');
 
 
-
 class Image{
     public $iId;
     public $sFile;
@@ -67,7 +66,7 @@ class Image{
         if($this->iId == 0){
 
             $sSQL = "INSERT INTO images (file, type_id, user_id, visible) 
-                    VALUES ( '".$this->sFile."', '".$this->iTypeId."', '".$this->iUserId."','1')";
+                    VALUES ( '".$this->escape($this->sFile)."', '".$this->escape($this->iTypeId)."', '".$this->iUserId."','1')";
 
             $bSuccess =  $oConnection->query($sSQL);
 

@@ -35,14 +35,15 @@ class View{
 
         $sHTML = '';
 
-
         $aImages = $oType->aImages;
 
         for($i=0; $i<count($aImages); $i++){
 
             $oImage = $aImages[$i];
 
-            $sHTML .= '<header class="intro" style="background-image:url(image/'.$oImage->sFile.')">
+            if($oImage->iVisible = 1){
+
+                $sHTML .= '<header class="intro" style="background-image:url(image/'.$oImage->sFile.')">
                     <div class="intro-body">
                         <div class="container">
                             <div class="row">
@@ -57,14 +58,16 @@ class View{
                                         
                                     </a>
                                  
-                       
-                              
-                              
                                 </div>
                             </div>
                         </div>
                     </div>
                 </header>';
+
+
+            }
+
+            
 
         }
 

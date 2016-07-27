@@ -60,7 +60,7 @@ class Type{
 		if($this->iId == 0){
 
 		$sSQL = "INSERT INTO types (type_name) 
-                    VALUES ('".$this->sTypeName."')";
+                    VALUES ('".$this->escape($this->sTypeName)."')";
 
 		$bSuccess =  $oConnection->query($sSQL);
 

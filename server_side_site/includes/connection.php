@@ -1,5 +1,7 @@
 <?php
 //define constants
+//password for database SR&Q4EM^RAB1 username aramisgo_admin
+
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
 define("DB_PASSWORD", "");

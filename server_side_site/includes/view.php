@@ -31,34 +31,41 @@ class View{
 
         $sHTML = '';
 
-
         $aImages = $oType->aImages;
 
         for($i=0; $i<count($aImages); $i++){
 
             $oImage = $aImages[$i];
 
-            $sHTML .= '<header class="intro" style="background-image:url(image/'.$oImage->sFile.')">
-                    <div class="intro-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2">
-                                    <h1 class="brand-heading"></h1>
-                                    <p class="intro-text toggle">VOTE COUNT '.$oImage->iScore.'</p>
-                                    <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll toggle">
-                                        <i class="fa fa-angle-down animated"></i>
-                                    </a>
-                                    <a href="vote_up.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll toggle">
-                                        <i class="fa fa-angle-up animated"></i>
+            if($oImage->iVisible == 1){
+
+                $sHTML .= '<header class="intro" style="background-image:url(image/'.$oImage->sFile.')">
+                        <div class="intro-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <h1 class="brand-heading"></h1>';
                                         
-                                    </a>
-                                 
-                              
+
+                if(($oImage->iScore > 0) && isset($_SESSION['user_id'])){
+                    $sHTML .='<p class="intro-text toggle"> VOTE COUNT '.$oImage->iScore.'</p>';
+                }
+                                        
+                $sHTML .='<a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll toggle">
+                                            <i class="fa fa-angle-down animated"></i>
+                                        </a>
+                                        <a href="vote_up.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll toggle">
+                                            <i class="fa fa-angle-up animated"></i>
+                                        </a>
+                                     
+                                  
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </header>';
+                    </header>';
+
+            }
 
         }
         return $sHTML;
@@ -73,23 +80,28 @@ class View{
             $oImage = $aImages[$i];
 
 
-            if(isset($oImage)){
+            if($oImage->iVisible=1){
 
                 $sHTML .= '<header class="intro" style="background-image:url(image/'.$oImage->sFile.')">
                     <div class="intro-body">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <h1 class="brand-heading"></h1>
-                                    <p class="intro-text toggle">VOTE COUNT '.$oImage->iScore.'</p>
-                                    <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll toggle">
-                                        <i class="fa fa-angle-down animated"></i>
+                                    <h1 class="brand-heading"></h1>';
+
+                    if(($oImage->iScore > 0) && isset($_SESSION['user_id'])){
+                        $sHTML .='<p class="intro-text toggle"> VOTE COUNT '.$oImage->iScore.'</p>';
+
+                    }
+
+                
+                $sHTML .= ' <a href="vote_down.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll toggle">
+                                    <i class="fa fa-angle-down animated"></i>
                                     </a>
                                     <a href="vote_up.php?imageid='.$oImage->iId.'" class="btn btn-circle page-scroll toggle">
-                                        <i class="fa fa-angle-up animated"></i>
-                                
+                                    <i class="fa fa-angle-up animated"></i>
+                                        
                                     </a>
-                                 
                                 </div>
                             </div>
                         </div>

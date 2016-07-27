@@ -29,7 +29,7 @@ class User{
 
         if($this->iId == 0){
             $sSQL= "INSERT INTO users (password, first_name, last_name, email)
-				    VALUES ('".$this->sPassword."', '".$this->sFirstName."', '".$this->sLastName."', '".$this->sEmail."')";
+				    VALUES ('".$this->escape($this->sPassword)."', '".$this->escape($this->sFirstName)."', '".$this->escape($this->sLastName)."', '".$this->escape($this->sEmail)."')";
 
             $bSuccess = $oConnection->query($sSQL);
 
