@@ -8,9 +8,8 @@ require_once('includes/header_admin.php');
 
 $oForm = new Form();
 
-
 $oType = new Type();
-$oType->sTypeName = $_POST['type_name'];
+$oType->sTypeName = isset($_GET['type_name']);
 $oType->save();
 
 

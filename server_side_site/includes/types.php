@@ -8,11 +8,13 @@ class Type{
 	public $iId;
 	public $sTypeName;
 	public $aImages;
+	public $iVisible;
 
 	public function __construct(){
 		$this->iId=0;
 		$this->sTypeName='';
 		$this->aImages=[];
+		$this->iVisible=1;
 	}
 
 	public function load($iId){
@@ -60,7 +62,7 @@ class Type{
 		if($this->iId == 0){
 
 		$sSQL = "INSERT INTO types (type_name) 
-                    VALUES ('".$this->escape($this->sTypeName)."')";
+                    VALUES ('".$oConnection->escape($this->sTypeName)."'".$this->iVisible."')";
 
 		$bSuccess =  $oConnection->query($sSQL);
 

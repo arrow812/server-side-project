@@ -1,6 +1,7 @@
 
 <?php
 ob_start();
+ini_set('upload_max_filesize', '4M'); 
 require_once('includes/header.php');
 require_once('includes/connection.php');
 require_once('includes/form.php');
@@ -93,7 +94,7 @@ require_once('includes/footer.php');
 <!---->
 <!--    <form class="form">-->
 <!--  <h3>ADD IMAGE</h3>-->
-<!--<!--   <fieldset class="form-group">-->
+<!--<!   <fieldset class="form-group">-->
 <!--    <label for="exampleInputEmail1">Email address</label>-->
 <!--    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">-->
 <!--    <small class="text-muted">We'll never share your email with anyone else.</small>-->

@@ -13,7 +13,8 @@ class TypeManager{
 
         $oConnection = new Connection();
 
-        $sSQL = 'SELECT id FROM types';
+        $sSQL = 'SELECT id FROM types
+                WHERE visible = 1';
 
         $oResultSet = $oConnection->query($sSQL);
 
@@ -29,17 +30,18 @@ class TypeManager{
 
 
 
-
-
     static public function listImages(){
 
         $aImages = [];
 
         $oConnection = new Connection;
 
-        $sSQL = 'SELECT * 
+        $sSQL = 'SELECT images.id, SUM(value) score
                   FROM images
-                  WHERE visible = 1';
+                  LEFT OUTER JOIN votes ON images.id=image_id
+                  WHERE visible = 1
+                  GROUP BY images.id
+                  ORDER BY score DESC';
 
         $oResultSet = $oConnection->query($sSQL);
 
@@ -59,7 +61,7 @@ class TypeManager{
         
         $oConnection = new Connection;
 
-        $sSQL = 'SELECT id,type_name 
+        $sSQL = 'SELECT id,type_name,visible 
                 FROM types
                 WHERE visible = 1';
 

@@ -61,6 +61,10 @@ p {
     }
 }
 
+a.deletetype{
+    
+}
+
 a {
     color: #42dca3;
     -webkit-transition: all .2s ease-in-out;

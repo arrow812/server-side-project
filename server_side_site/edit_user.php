@@ -1,4 +1,5 @@
 <?php
+ob_start(); 
 require_once('includes/header.php');
 
 //die(print_r($_SESSION));

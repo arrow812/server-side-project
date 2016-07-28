@@ -1,4 +1,6 @@
 <?php
+
+ob_start();
 require_once('includes/view.php');
 require_once('includes/connection.php');
 require_once('includes/header.php');

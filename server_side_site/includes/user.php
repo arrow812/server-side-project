@@ -29,7 +29,7 @@ class User{
 
         if($this->iId == 0){
             $sSQL= "INSERT INTO users (password, first_name, last_name, email)
-				    VALUES ('".$this->escape($this->sPassword)."', '".$this->escape($this->sFirstName)."', '".$this->escape($this->sLastName)."', '".$this->escape($this->sEmail)."')";
+				    VALUES ('".$oConnection->escape($this->sPassword)."', '".$oConnection->escape($this->sFirstName)."', '".$oConnection->escape($this->sLastName)."', '".$oConnection->escape($this->sEmail)."')";
 
             $bSuccess = $oConnection->query($sSQL);
 
@@ -39,8 +39,8 @@ class User{
 
         }else{
             $sSQL= "UPDATE users
-	 				SET  password = '".$this->sPassword."', first_name = '".$this->sFirstName."', last_name = '".$this->sLastName."', email = '".$this->sEmail."'
-					WHERE id=".$oConnection->escape($this->iId);
+	 				SET first_name = '".$oConnection->escape($this->sFirstName)."', last_name = '".$oConnection->escape($this->sLastName)."', email = '".$oConnection->escape($this->sEmail)."'
+					WHERE id=".$this->iId;
 
         // echo $sSQL;
 

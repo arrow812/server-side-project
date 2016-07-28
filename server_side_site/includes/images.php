@@ -28,6 +28,8 @@ class Image{
         $this->iVisible=0;
     }
 
+    //
+
 
     public function load($iId){
 
@@ -65,8 +67,10 @@ class Image{
 
         if($this->iId == 0){
 
-            $sSQL = "INSERT INTO images (file, type_id, user_id, visible) 
-                    VALUES ( '".$this->escape($this->sFile)."', '".$this->escape($this->iTypeId)."', '".$this->iUserId."','1')";
+            $sSQL = "INSERT INTO images (file, type_id, user_id, visible); 
+                    VALUES ( '".$this->sFile."', '".$oConnection->escape($this->iTypeId)."', '".$oConnection->escape($this->iUserId)."','1')";
+
+                    
 
             $bSuccess =  $oConnection->query($sSQL);
 
@@ -98,8 +102,11 @@ class Image{
 
    }
 
+
+
 }
 
+//echo ($sSQL);
 
 
 
